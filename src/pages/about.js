@@ -6,7 +6,7 @@ export default ({ data }) => (
     <Layout>
       <h1>{`${JSON.stringify(data.allWordpressPost.edges[0].node.title)}`}</h1> 
       {`${JSON.stringify(data.allWordpressPost.edges[0].node.excerpt)}`}
-      {console.log('show mi data: ', data.allWordpressPost.edges[0].node.excerpt)}
+      {console.log('show mi data: ', data.allWordpressPost.edges)}
     </Layout>
   )
   
