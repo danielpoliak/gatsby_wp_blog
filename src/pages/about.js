@@ -4,21 +4,30 @@ import Layout from "../components/layout"
 
 export default ({ data }) => (
     <Layout>
-      <h1>About {data.site.siteMetadata.title}</h1> 
-      <p>
-        We're the only site running on your computer dedicated to showing the best
-        photos and videos of pandas eating lots of food.
-      </p>
-      {console.log('in about cachre machre :', process.env.GATSBY_API_URL)}
+      <h1>{`${JSON.stringify(data.allWordpressPost.edges[0].node.title)}`}</h1> 
+      {`${JSON.stringify(data.allWordpressPost.edges[0].node.excerpt)}`}
+      {console.log('show mi data: ', data.allWordpressPost.edges[0].node.excerpt)}
     </Layout>
   )
   
   export const query = graphql`
-    query {
-      site {
-        siteMetadata {
+  {
+    allWordpressPost(sort: { fields: [date], order:DESC }) {
+      edges {
+        node {
+          date(formatString: "DD, MMM YYYY")
           title
+          excerpt
+          author{
+            name
+          }
+          categories {
+            id
+            name
+          }
+          slug
         }
       }
     }
+  }
   `
