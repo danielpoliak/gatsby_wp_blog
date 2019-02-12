@@ -17,20 +17,37 @@ export default ({ children }) => (
       <h3
         css={css`
           margin-bottom: ${rhythm(2)};
+          margin-right: ${rhythm(2)};
           display: inline-block;
           font-style: normal;
         `}
       >
-        Pandas Eating Lots
+        HOME
       </h3>
     </Link>
-    <Link
-      to={`/about/`}
-      css={css`
-        float: right;
-      `}
-    >
-      About
+    <Link to={`/blog`}>
+      <h3
+        css={css`
+          margin-bottom: ${rhythm(2)};
+          margin-right: ${rhythm(2)};
+          display: inline-block;
+          font-style: normal;
+        `}
+      >
+        BLOG
+      </h3>
+    </Link>
+    <Link to={`/about`}>
+      <h3
+        css={css`
+          margin-bottom: ${rhythm(2)};
+          margin-right: ${rhythm(2)};
+          display: inline-block;
+          font-style: normal;
+        `}
+      >
+        ABOUT
+      </h3>
     </Link>
     {children}
   </div>
