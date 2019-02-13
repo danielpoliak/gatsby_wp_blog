@@ -13,6 +13,13 @@ module.exports = {
     plugins: [
       `gatsby-plugin-emotion`,
       {
+        resolve: `gatsby-plugin-sharp`,
+        options: {
+          useMozJpeg: false,
+          stripMetadata: true,
+        },
+      },
+      {
         resolve: `gatsby-plugin-typography`,
         options: {
           pathToConfigModule: `src/utils/typography`,
