@@ -1,54 +1,50 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
-
+import styles from './navbar.module.css'
 import { rhythm } from "../utils/typography"
 
 export default ({ children }) => (
-  <div
-    css={css`
-      margin: 0 auto;
-      max-width: 1000px;
-      padding: ${rhythm(2)};
-      padding-top: ${rhythm(0.5)};
-    `}
-  >
+  <div className={styles.container}>
+  <ul>
     <Link to={`/`}>
-      <h3
+      <li
         css={css`
-          margin-bottom: ${rhythm(2)};
+          margin-bottom: ${rhythm(1)};
           margin-right: ${rhythm(2)};
           display: inline-block;
           font-style: normal;
         `}
       >
         HOME
-      </h3>
-    </Link>
-    <Link to={`/posts`}>
-      <h3
-        css={css`
-          margin-bottom: ${rhythm(2)};
-          margin-right: ${rhythm(2)};
-          display: inline-block;
-          font-style: normal;
-        `}
-      >
-        BLOG
-      </h3>
+      </li>
     </Link>
     <Link to={`/about`}>
-      <h3
+      <li
         css={css`
-          margin-bottom: ${rhythm(2)};
+          margin-bottom: ${rhythm(1)};
           margin-right: ${rhythm(2)};
           display: inline-block;
           font-style: normal;
         `}
       >
         ABOUT
-      </h3>
+      </li>
     </Link>
+    <Link to={`/posts`}>
+      <li
+        css={css`
+          margin-bottom: ${rhythm(1)};
+          margin-right: ${rhythm(2)};
+          display: inline-block;
+          font-style: normal;
+        `}
+      >
+        BLOG
+      </li>
+    </Link>
+  </ul >
+    <hr />
     {children}
   </div>
 )

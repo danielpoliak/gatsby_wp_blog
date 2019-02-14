@@ -20,10 +20,6 @@ export default ({ data }) => (
           author{
             name
           }
-          featured_media {
-            source_url
-            media_type
-          }
           categories {
             id
             name
