@@ -8,9 +8,9 @@ export default ({ children }) => (
   <div
     css={css`
       margin: 0 auto;
-      max-width: 700px;
+      max-width: 1000px;
       padding: ${rhythm(2)};
-      padding-top: ${rhythm(1.5)};
+      padding-top: ${rhythm(0.5)};
     `}
   >
     <Link to={`/`}>
@@ -25,7 +25,7 @@ export default ({ children }) => (
         HOME
       </h3>
     </Link>
-    <Link to={`/blog`}>
+    <Link to={`/posts`}>
       <h3
         css={css`
           margin-bottom: ${rhythm(2)};

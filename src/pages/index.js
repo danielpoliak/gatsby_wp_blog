@@ -1,14 +1,12 @@
 import React from "react"
-import Layout from "../components/layout"
+import Link from 'gatsby-link'
+import Layout from '../components/layout'
 
 export default () => (
   <Layout>
-    <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
-      <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
-        <p>
-          What do I like to do? Lots of course but definitely enjoy building
-          websites.
-        </p>
-    </div>
+    <h1>Hello World</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <Link to="/about/">Go to about</Link>
   </Layout>
 )
