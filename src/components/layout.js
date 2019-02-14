@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { css } from "@emotion/core";
 import { Link } from "gatsby";
-import styles from "./navbar.module.css";
 import {
   Collapse,
   Navbar,
@@ -10,6 +9,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import styles from './layout.module.css'
 
 export default class Layout extends Component {
   state = {
@@ -21,31 +21,37 @@ export default class Layout extends Component {
   render() {
     const { children } = this.props;
     return (
-      <div className={styles.container}>
+      <React.Fragment >
+        <div className={styles.navContainer}>
         <Navbar light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav  navbar>
               <NavItem>
                 <NavLink>
-                  <Link to={`/`}>HOME</Link>
+                  <Link className={styles.navLink} to={`/`}>HOME</Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <Link to={`/about`}>ABOUT</Link>
+                  <Link className={styles.navLink} to={`/about`}>ABOUT</Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <Link to={`/posts`}>BLOG</Link>
+                  <Link className={styles.navLink} to={`/posts`}>BLOG</Link>
                 </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
+        </div>
+        <hr className={styles.hr}/>
+        <div className={styles.contentContainer}> 
         {children}
-      </div>
+
+        </div>
+      </React.Fragment>
     );
   }
 }

@@ -9,7 +9,6 @@ class Posts extends Component {
 
     return (
       <Layout>
-        <h1>Posts</h1>
         {data.allWordpressPost.edges.map(({ node }) => (
           <div key={node.slug} style={{ marginBottom: 50 }}>
             <Link to={"post/" + node.slug}>
