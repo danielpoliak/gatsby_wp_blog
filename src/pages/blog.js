@@ -21,10 +21,6 @@ export default ({ data }) => (
           author{
             name
           }
-          categories {
-            id
-            name
-          }
           slug
         }
       }

@@ -18,13 +18,6 @@ export default ({ data }) => (
           date(formatString: "DD, MMM YYYY")
           title
           excerpt
-          author{
-            name
-          }
-          categories {
-            id
-            name
-          }
           slug
         }
       }

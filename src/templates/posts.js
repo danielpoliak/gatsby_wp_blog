@@ -36,9 +36,6 @@ export const pageQuery = graphql`
           excerpt
           slug
           date(formatString: "MMMM DD, YYYY")
-          categories {
-            name
-          }
         }
       }
     }
