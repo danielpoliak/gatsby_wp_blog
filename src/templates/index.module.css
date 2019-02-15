@@ -1,0 +1,12 @@
+.postContainer {
+    display: inline-block;
+}
+
+.image {
+    float: left;
+    margin: 20px;
+}
+
+.h3 {
+    margin: 20px;
+}

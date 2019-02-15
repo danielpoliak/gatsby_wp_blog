@@ -27,10 +27,21 @@ const postsQuery = `
     edges {
       node {
         id
+        title
+        excerpt
         slug
-        status
-        template
-        format
+        date(formatString: "MMMM DD, YYYY")
+        featured_media {
+          localFile {
+            childImageSharp {
+              resolutions(width:400, height:300) {
+                src,
+                width,
+                height
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -40,11 +51,11 @@ const postsQuery = `
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
-
     //  PAGES
 
     graphql(pageQuery)
       .then(result => {
+        
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
@@ -65,6 +76,15 @@ exports.createPages = ({ graphql, actions }) => {
 
       .then(() => {
         graphql(postsQuery).then(result => {
+          createPaginatedPages({
+            edges: result.data.allWordpressPost.edges,
+            createPage: createPage,
+            pageTemplate: 'src/templates/index.js',
+            pageLength: 2, // This is optional and defaults to 10 if not used
+            pathPrefix: '', // This is optional and defaults to an empty string if not used
+            context: {}, // This is optional and defaults to an empty object if not used
+          })
+
           if (result.errors) {
             console.log(result.errors)
             reject(result.errors)
