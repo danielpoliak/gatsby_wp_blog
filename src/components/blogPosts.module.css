@@ -1,0 +1,21 @@
+.postContainer {
+    display: inline-block;
+}
+
+.image {
+    float: left;
+    margin: 20px;
+}
+
+.descriptionContainer {
+    margin: 20px;
+}
+
+.title {
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.date {
+    margin: 40px;
+}

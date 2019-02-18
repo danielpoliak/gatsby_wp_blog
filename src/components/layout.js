@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { css } from "@emotion/core";
 import { Link } from "gatsby";
-
-import styles from './layout.module.css'
+import styles from "./layout.module.css";
+import { Container, Row, Col } from "reactstrap";
 
 export default class Layout extends Component {
   state = {
@@ -14,17 +13,25 @@ export default class Layout extends Component {
   render() {
     const { children } = this.props;
     return (
-      <React.Fragment >
+      <React.Fragment>
         <div className={styles.navContainer}>
-                  <Link className={styles.navLink} to={`/`}>HOME</Link>
-                  <Link className={styles.navLink} to={`/about`}>ABOUT</Link>
-                  <Link className={styles.navLink} to={`/posts`}>BLOG</Link>
+          <Link className={styles.navLink} to={`/`}>
+            HOME
+          </Link>
+          <Link className={styles.navLink} to={`/about`}>
+            ABOUT
+          </Link>
+          <Link className={styles.navLink} to={`/posts`}>
+            BLOG
+          </Link>
         </div>
-        <hr className={styles.hr}/>
-        <div className={styles.contentContainer}> 
-        {children}
-
-        </div>
+        <hr className={styles.hr} />
+        <Container>
+        <Row>
+          <Col>{children}</Col>
+        </Row>
+        
+        </Container>
       </React.Fragment>
     );
   }

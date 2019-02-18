@@ -80,8 +80,16 @@ exports.createPages = ({ graphql, actions }) => {
             edges: result.data.allWordpressPost.edges,
             createPage: createPage,
             pageTemplate: 'src/templates/index.js',
-            pageLength: 2, // This is optional and defaults to 10 if not used
+            pageLength: 5, // This is optional and defaults to 10 if not used
             pathPrefix: '', // This is optional and defaults to an empty string if not used
+            context: {}, // This is optional and defaults to an empty object if not used
+          })
+          createPaginatedPages({
+            edges: result.data.allWordpressPost.edges,
+            createPage: createPage,
+            pageTemplate: 'src/templates/posts.js',
+            pageLength: 5, // This is optional and defaults to 10 if not used
+            pathPrefix: '/posts', // This is optional and defaults to an empty string if not used
             context: {}, // This is optional and defaults to an empty object if not used
           })
 
@@ -93,10 +101,10 @@ exports.createPages = ({ graphql, actions }) => {
           const postsTemplate = path.resolve("./src/templates/posts.js");
 
           // Create Posts
-          createPage({
-            path: `/posts/`,
-            component: slash(postsTemplate)
-        });
+        //   createPage({
+        //     path: `/posts/`,
+        //     component: slash(postsTemplate)
+        // });
 
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
