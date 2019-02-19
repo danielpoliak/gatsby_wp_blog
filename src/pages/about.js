@@ -2,25 +2,24 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout";
 
-export default ({ data }) => (
+const AboutPage = props => {
+  const post = props.data.wordpressPage;
+
+  return (
     <Layout>
-      <h1>{`${JSON.stringify(data.allWordpressPost.edges[0].node.title)}`}</h1> 
-      {`${JSON.stringify(data.allWordpressPost.edges[0].node.excerpt)}`}
-      {console.log('show mi data: ', data.allWordpressPost.edges)}
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      {console.log(props, ' props in about')}
     </Layout>
-  )
+  );
+};
+
+export default AboutPage
   
-  export const query = graphql`
+  export const aboutQuery = graphql`
   {
-    allWordpressPost(sort: { fields: [date], order:DESC }) {
-      edges {
-        node {
-          date(formatString: "DD, MMM YYYY")
-          title
-          excerpt
-          slug
-        }
-      }
+    wordpressPage (slug: {eq: "about"}) {
+      title
+      content
     }
   }
-  `
+`

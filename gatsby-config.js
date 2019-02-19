@@ -26,6 +26,14 @@ module.exports = {
         },
       },
       {
+        resolve: `gatsby-source-instagram`,
+        options: {
+          username: `little_travel_big`,
+        access_token: "6215424489.M2E4MWE5Zg==.YWE5NDQzYmNlYTI4.NGJlNmI4NTliMzMxOTBhZjlkNmQ=",
+        instagram_id: "6215424489",
+        },
+      },
+      {
         resolve: "gatsby-source-wordpress",
         options: {
           baseUrl: "jadventure.net",
