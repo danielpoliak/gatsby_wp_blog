@@ -34,7 +34,7 @@ const postsQuery = `
         featured_media {
           localFile {
             childImageSharp {
-              resolutions(width:400, height:300) {
+              resolutions(width:350, height:250) {
                 src,
                 width,
                 height

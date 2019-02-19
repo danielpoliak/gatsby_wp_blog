@@ -1,8 +1,8 @@
 .navContainer {
-    margin: 10px auto;
-    max-width: 1200px;
+    margin: 15px auto;
+    margin-bottom: 50px;
+    text-align: left;
 }
-
 
 .navLink {
     color: black;
@@ -12,7 +12,14 @@
 
 .navLink:hover{
     text-decoration: none;
-    color: black;
+    color: purple;
+}
+
+.header {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hr {

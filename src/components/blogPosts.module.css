@@ -2,13 +2,12 @@
     display: inline-block;
 }
 
-.image {
-    float: left;
-    margin: 20px;
+.hr {
+    margin-top: 30px;
 }
 
-.descriptionContainer {
-    margin: 20px;
+.container {
+    margin-bottom: 40px;
 }
 
 .title {

@@ -25,12 +25,20 @@ export default class Layout extends Component {
             BLOG
           </Link>
         </div>
-        <hr className={styles.hr} />
         <Container>
+        <Row>
+          <Col className={styles.header}>
+          <h1 >
+            Jadventure
+          </h1>
+          <h4>
+          When you love your life, everything else falls into place
+          </h4>
+          </Col>
+        </Row>
         <Row>
           <Col>{children}</Col>
         </Row>
-        
         </Container>
       </React.Fragment>
     );
