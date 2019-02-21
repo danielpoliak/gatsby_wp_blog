@@ -10,11 +10,11 @@ import {
 
 export default ({ pageContext }) => (
   <React.Fragment>
-    {pageContext.group.map(({ node }) => (
-      <div className={styles.container}>
+    {pageContext.group.map(({ node }, index) => (
+      <div className={styles.container} key={index}>
         <Container>
           <Row>
-            <Col xs="12" lg="5">
+            <Col xs="" lg="5">
               {node.featured_media.localFile && (
                 <Link to={"post/" + node.slug}>
                   <Img

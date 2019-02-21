@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styles from "./layout.module.css";
+import Img from "gatsby-image";
+import logo from "../img/Jadventure.png";
+import { StaticQuery, graphql } from "gatsby";
 import {
   Container,
   Row,
@@ -10,13 +13,46 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
+  Jumbotron,
   NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      {
+        allFile(filter: { sourceInstanceName: { eq: "img" } }) {
+          edges {
+            node {
+              childImageSharp {
+                fluid(maxWidth: 1500) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+        <Img 
+          fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            width: "100%",
+            height: "60%"
+          }} 
+        />
+        
+    )}
+  />
+);
 
 export default class Layout extends Component {
   state = {
@@ -29,10 +65,12 @@ export default class Layout extends Component {
     const { children } = this.props;
     return (
       <React.Fragment>
-        <Navbar color="light" light expand="md">
+      <div className={styles.header}>
+        <Header />
+        <Navbar light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-left" navbar>
+            <Nav navbar>
               <Link className={styles.navLink} to={`/`}>
                 HOME
               </Link>
@@ -45,13 +83,9 @@ export default class Layout extends Component {
             </Nav>
           </Collapse>
         </Navbar>
+      </div>
+
         <Container>
-          <Row>
-            <Col className={styles.header}>
-              <h2 className={styles.title}>Jadventure</h2>
-              <h4 className={styles.description}>When you love your life, everything else falls into place</h4>
-            </Col>
-          </Row>
           <Row>
             <Col>{children}</Col>
           </Row>
@@ -60,3 +94,15 @@ export default class Layout extends Component {
     );
   }
 }
+
+// export const query = graphql`
+//   query {
+//     file(relativePath: { eq: "src/assets/Jadventure.png" }) {
+//       childImageSharp {
+//         fixed(width: 125, height: 125) {
+//           ...GatsbyImageSharpFixed
+//         }
+//       }
+//     }
+//   }
+// `

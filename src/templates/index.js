@@ -10,3 +10,25 @@ export default (props) => (
     {console.log(props, ' props in index')}
   </Layout>
 );
+
+export const query = graphql`
+{
+  allWordpressPost {
+    edges {
+      node {
+       
+        featured_media {
+          localFile {
+            childImageSharp {
+              resolutions(width:350, height:250) {
+                height
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
+`

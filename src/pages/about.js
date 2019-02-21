@@ -1,5 +1,5 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 
 const AboutPage = props => {
@@ -8,18 +8,17 @@ const AboutPage = props => {
   return (
     <Layout>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      {console.log(props, ' props in about')}
     </Layout>
   );
 };
 
-export default AboutPage
-  
-  export const aboutQuery = graphql`
+export default AboutPage;
+
+export const aboutQuery = graphql`
   {
-    wordpressPage (slug: {eq: "about"}) {
+    wordpressPage(slug: { eq: "about" }) {
       title
       content
     }
   }
-`
+`;

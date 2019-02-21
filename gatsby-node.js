@@ -6,7 +6,7 @@ const createPaginatedPages = require('gatsby-paginate')
 
 const postsQuery = `
 {
-  allWordpressPost {
+   allWordpressPost {
     edges {
       node {
         id

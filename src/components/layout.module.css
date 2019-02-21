@@ -1,13 +1,12 @@
-.navContainer {
-    margin: 15px auto;
-    margin-bottom: 50px;
-    text-align: left;
+.header {
+    height: 400px;
 }
 
 .navLink {
     color: black;
     text-decoration: none;
-    margin: 20px;
+    font-size: 18px;
+    margin: 10px;
 }
 
 .navLink:hover{
