@@ -29,7 +29,7 @@ const Header = () => (
           edges {
             node {
               childImageSharp {
-                fluid(maxWidth: 1500) {
+                fluid(maxWidth: 1920) {
                   ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
@@ -39,17 +39,16 @@ const Header = () => (
       }
     `}
     render={data => (
-        <Img 
-          fluid={data.allFile.edges[0].node.childImageSharp.fluid}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "60%"
-          }} 
-        />
-        
+      <Img
+        fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "400px"
+        }}
+      />
     )}
   />
 );
@@ -65,26 +64,27 @@ export default class Layout extends Component {
     const { children } = this.props;
     return (
       <React.Fragment>
-      <div className={styles.header}>
-        <Header />
+        {this.props.isIndex && 
+        <div className={styles.header}>
+          <Header />
+        </div>
+      }
         <Navbar light expand="md">
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav navbar>
-              <Link className={styles.navLink} to={`/`}>
-                HOME
-              </Link>
-              <Link className={styles.navLink} to={`/about`}>
-                ABOUT
-              </Link>
-              <Link className={styles.navLink} to={`/posts`}>
-                BLOG
-              </Link>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav navbar>
+                <Link className={styles.navLink} to={`/`}>
+                  HOME
+                </Link>
+                <Link className={styles.navLink} to={`/about`}>
+                  ABOUT
+                </Link>
+                <Link className={styles.navLink} to={`/posts`}>
+                  BLOG
+                </Link>
+              </Nav>
+            </Collapse>
+          </Navbar>
         <Container>
           <Row>
             <Col>{children}</Col>
