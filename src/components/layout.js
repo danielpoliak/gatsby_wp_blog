@@ -40,13 +40,13 @@ const Header = () => (
     `}
     render={data => (
       <Img
-        fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+        fluid={data.allFile.edges[1].node.childImageSharp.fluid}
         style={{
           position: "absolute",
           left: 0,
           top: 0,
           width: "100%",
-          height: "400px"
+          height: "500px"
         }}
       />
     )}
@@ -69,10 +69,10 @@ export default class Layout extends Component {
           <Header />
         </div>
       }
-        <Navbar light expand="md">
+        <Navbar sticky='top' expand="md">
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav navbar>
+              <Nav className="auto" navbar>
                 <Link className={styles.navLink} to={`/`}>
                   HOME
                 </Link>
@@ -94,15 +94,3 @@ export default class Layout extends Component {
     );
   }
 }
-
-// export const query = graphql`
-//   query {
-//     file(relativePath: { eq: "src/assets/Jadventure.png" }) {
-//       childImageSharp {
-//         fixed(width: 125, height: 125) {
-//           ...GatsbyImageSharpFixed
-//         }
-//       }
-//     }
-//   }
-// `
