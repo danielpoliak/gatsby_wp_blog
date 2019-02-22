@@ -10,8 +10,7 @@
     margin-bottom: 40px;
 }
 
-.title {
-    margin-top: 10px;
+.title:hover {
     text-decoration: none;
 }
 

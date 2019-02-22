@@ -8,7 +8,9 @@ const PostTemplate = props => {
   return (
     <Layout>
       <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+      {console.log(post.title, ' title is')}
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      {console.log(post.content, ' content')}
     </Layout>
   );
 };

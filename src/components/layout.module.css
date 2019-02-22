@@ -1,12 +1,13 @@
-.header {
-    height: 400px;
+.navbar {
+    box-shadow: 0 4px 6px -6px #222;
 }
 
 .navLink {
     color: black;
     text-decoration: none;
-    font-size: 20px;
-    margin: 10px;
+    font-size: 21px;
+    margin: 10px 30px;
+    margin-left: 0;
 }
 
 .navLink:hover{
@@ -15,18 +16,10 @@
 }
 
 .header {
-    margin: 0px 0 100px 0;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 50px;
+    height: 500px;
 }
 
-.title {
-    margin-bottom: 40px;
-}
-
-.hr {
-    width: 100%;
+.content {
+    margin-top: 40px;
 }

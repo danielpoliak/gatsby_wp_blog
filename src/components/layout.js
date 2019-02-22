@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styles from "./layout.module.css";
 import Img from "gatsby-image";
-import logo from "../img/Jadventure.png";
 import { StaticQuery, graphql } from "gatsby";
 import {
   Container,
@@ -11,14 +10,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
-  Nav,
-  Jumbotron,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  Nav
 } from "reactstrap";
 
 const Header = () => (
@@ -44,7 +36,7 @@ const Header = () => (
         style={{
           position: "absolute",
           left: 0,
-          top: 0,
+          top: 45,
           width: "100%",
           height: "500px"
         }}
@@ -64,29 +56,31 @@ export default class Layout extends Component {
     const { children } = this.props;
     return (
       <React.Fragment>
-        {this.props.isIndex && 
-        <div className={styles.header}>
-          <Header />
-        </div>
-      }
-        <Navbar sticky='top' expand="md">
-            <NavbarToggler onClick={this.toggle} />
+        {this.props.isIndex && (
+          <div className={styles.header}>
+            <Header />
+          </div>
+        )}
+        <Container>
+          <Navbar className={styles.navbar} fixed="top" color="white" light expand="md">
+            <NavbarToggler onClick={this.toggle} className="mr-2" />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="auto" navbar>
-                <Link className={styles.navLink} to={`/`}>
-                  HOME
-                </Link>
-                <Link className={styles.navLink} to={`/about`}>
-                  ABOUT
-                </Link>
-                <Link className={styles.navLink} to={`/posts`}>
-                  BLOG
-                </Link>
-              </Nav>
+              <Container >
+                <Nav navbar >
+                  <Link className={styles.navLink} to={`/`}>
+                    HOME
+                  </Link>
+                  <Link className={styles.navLink} to={`/about`}>
+                    ABOUT
+                  </Link>
+                  <Link className={styles.navLink} to={`/posts`}>
+                    BLOG
+                  </Link>
+                </Nav>
+              </Container>
             </Collapse>
           </Navbar>
-        <Container>
-          <Row>
+          <Row className={styles.content}>
             <Col>{children}</Col>
           </Row>
         </Container>
