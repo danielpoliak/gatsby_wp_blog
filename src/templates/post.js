@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Img from "gatsby-image";
+import React from "react";
 import Layout from "../components/layout";
 
 const PostTemplate = props => {
@@ -8,9 +7,9 @@ const PostTemplate = props => {
   return (
     <Layout>
       <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-      {console.log(post.title, ' title is')}
+      {console.log(props, " props in post is")}
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      {console.log(post.content, ' content')}
+      {console.log(post.content, " content")}
     </Layout>
   );
 };
