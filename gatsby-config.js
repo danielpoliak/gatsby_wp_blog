@@ -22,6 +22,14 @@ module.exports = {
       {
         resolve: `gatsby-source-filesystem`,
         options: {
+          path: `${__dirname}/src/posts/`,
+          name: "markdown-pages",
+        },
+      },
+      `gatsby-transformer-remark`,
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
           name: `img`,
           path: `${__dirname}/src/img/`,
         },
@@ -67,5 +75,6 @@ module.exports = {
       "gatsby-plugin-react-helmet",
       "gatsby-transformer-sharp",
       "gatsby-plugin-sharp",
+      
     ],
   }
