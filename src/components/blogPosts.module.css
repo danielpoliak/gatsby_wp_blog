@@ -1,19 +1,19 @@
 .postContainer {
-    display: inline-block;
+  display: inline-block;
 }
 
 .hr {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .container {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .title:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .date {
-    margin: 40px;
+  margin: 40px;
 }

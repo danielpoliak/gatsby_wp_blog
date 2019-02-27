@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styles from "./layout.module.css";
-
+import Footer from './footer'
 import {
   Container,
   Row,
@@ -12,8 +12,6 @@ import {
   Nav
 } from "reactstrap";
 import HeaderImage from "./HeaderImage";
-
-
 
 export default class Layout extends Component {
   state = {
@@ -60,6 +58,7 @@ export default class Layout extends Component {
             <Col>{children}</Col>
           </Row>
         </Container>
+        <Footer />
       </React.Fragment>
     );
   }
