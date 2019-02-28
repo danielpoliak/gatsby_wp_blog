@@ -1,0 +1,20 @@
+.container {
+  margin: 40px 0;
+}
+
+.linkWrapper {
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+
+}
+
+.link {
+  text-decoration: none;
+}
+
+.imageWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
