@@ -41,12 +41,10 @@ module.exports = {
         },
       },
       {
-        resolve: `gatsby-source-instagram`,
+        resolve: `gatsby-source-instagram-all`,
         options: {
-          username: `little_travel_big`,
-        access_token: "6215424489.M2E4MWE5Zg==.YWE5NDQzYmNlYTI4.NGJlNmI4NTliMzMxOTBhZjlkNmQ=",
-        instagram_id: "6215424489",
-        },
+          access_token: "6215424489.1677ed0.ea9c1db18d524cc2a762331a9b6e6e8d"
+        }
       },
       {
         resolve: "gatsby-source-wordpress",
